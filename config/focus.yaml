@@ -1,0 +1,45 @@
+agent:
+  name: "Agente Lead Scouting, Scraping & Generation (B2B)"
+  language: "it-IT"
+
+# Default: reference company = Teleimpianti. Puoi cambiarlo a runtime tramite API /reference/profile
+reference:
+  company_name: "Teleimpianti S.p.A."
+  company_url: "https://www.teleimpianti.it"
+  geography_focus:
+    country: "Italia"
+    region: "Emilia-Romagna"
+    provinces: ["Bologna", "Modena", "Reggio Emilia"]
+
+lead_scouting:
+  # query templates: puoi personalizzare in base al tuo settore/offer
+  growth_signals_keywords:
+    - "assunzioni"
+    - "lavora con noi"
+    - "nuova sede"
+    - "ampliamento"
+    - "investimento"
+    - "commessa"
+    - "aggiudicazione"
+    - "bando"
+    - "finanziamento"
+    - "round"
+    - "acquisizione"
+  min_estimated_budget_eur: 30000
+  target_budget_eur: 50000
+  expected_investment_window_months: [4, 6]
+
+scoring:
+  weights:
+    fit_settore: 25
+    capacita_budget: 25
+    timing_investimento: 25
+    segnali_crescita: 15
+    allineamento_referenze: 10
+  classes:
+    hot: [80, 100]
+    warm: [60, 79]
+    cold: [0, 59]
+
+telemetry:
+  enabled: true
